@@ -15,11 +15,12 @@
  ******************************************************************************/
 package net.sf.uadetector.datastore;
 
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
-import static org.fest.assertions.Assertions.assertThat;
+import com.google.common.io.ByteStreams;
+import com.google.common.io.Files;
+import org.junit.Ignore;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,12 +28,11 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.Charset;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-
-import com.google.common.io.ByteStreams;
-import com.google.common.io.Files;
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+import static org.fest.assertions.Assertions.assertThat;
 
 public class CachingXmlDataStoreTest_deleteCacheFile {
 
@@ -55,6 +55,7 @@ public class CachingXmlDataStoreTest_deleteCacheFile {
 	@Rule
 	public final TemporaryFolder folder = new TemporaryFolder();
 
+	@Ignore
 	@Test
 	public void loadCorruptedCacheFile_useFallback_doNotOverrideCacheFileWithFallbackData_cacheFileIsNotDeletable() throws IOException,
 			InterruptedException, URISyntaxException {

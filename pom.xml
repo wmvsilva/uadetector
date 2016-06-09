@@ -78,7 +78,7 @@
 		<build-helper-maven-plugin.version>1.9.1</build-helper-maven-plugin.version>
 		<clirr-maven-plugin.version>2.6.1</clirr-maven-plugin.version>
 		<findbugs-maven-plugin.version>2.5.5</findbugs-maven-plugin.version>
-		<jacoco.version>0.6.2.201302030002</jacoco.version>
+		<jacoco.version>0.7.7.201606060606</jacoco.version>
 		<maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
 		<maven-assembly-plugin.version>2.4.1</maven-assembly-plugin.version>
 		<maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
@@ -314,6 +314,8 @@
 					<artifactId>jacoco-maven-plugin</artifactId>
 					<version>${jacoco.version}</version>
 					<configuration>
+						<rules>
+						</rules>
 						<destfile>${basedir}/target/coverage-reports/jacoco-unit.exec</destfile>
 						<datafile>${basedir}/target/coverage-reports/jacoco-unit.exec</datafile>
 					</configuration>
